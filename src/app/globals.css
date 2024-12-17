@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .header_top_icon_wrapper {
+    @apply bg-gray-200 rounded-md p-[6px] text-[14px] cursor-pointer hover:bg-blue-500 hover:text-white transition;
+  }
+
+  .navbar_link {
+    @apply relative text-gray-700 hover:text-blue-500;
+    transition: all 0.4s;
+  }
+
+  .navbar_link::after {
+    position: absolute;
+    content: "";
+    background-color: black;
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .navbar_link:hover::after {
+    transform: scaleX(1);
+  }
+}
